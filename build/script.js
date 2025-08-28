@@ -137,12 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const bucket = ["Ice cream date 🍦","Movie marathon 🎬","Trip together ✈️","Cook together (burn the house) 🍳", "Throw you into backetball hook ⛹️‍♂️", "Give you shit load of hickeys 💋", "Etc... (no spoiler) 💌"];
   document.getElementById("bucketList").innerHTML = bucket.map(it => `<li class="bucket-item">${it}</li>`).join("");
 
-  document.getElementById("favGrid").innerHTML =
-    `<div class="card">Fav Moment: First screenshot</div><div class="card">Fav Moment: Laughter fit</div>`;
-
-  document.getElementById("futurePlans").innerHTML =
-    `<p>Day 200 — Surprise date.<br>Day 365 — Anniversary plan.</p>`;
-
   /* ---------- INTERSECTION OBSERVER for reveal animations ---------- */
   const ioOptions = { root: null, rootMargin: "0px", threshold: 0.12 };
   const observer = new IntersectionObserver((entries) => {
