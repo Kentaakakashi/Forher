@@ -39,7 +39,7 @@ document.getElementById('timeline').innerHTML=
   TIMELINE.map(t=>`<div><h3>${t.title}</h3><p>${t.desc}</p></div>`).join('');
 
 // Gallery
-const GALLERY=[...Array(8)].map((_,i)=>({src:`assets/memory_${i+1}.jpg`,caption:`Memory #${i+1}`}));
+const GALLERY=[...Array(8)].map((_,i)=>({src:`assets/memory_${i+01}.jpg`,caption:`Memory #${i+01}`}));
 document.getElementById('grid').innerHTML=
   GALLERY.map(g=>`<div><img src='${g.src}'/><p>${g.caption}</p></div>`).join('');
 
