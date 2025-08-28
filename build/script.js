@@ -88,18 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- GALLERY: uses memory_01..memory_12.jpg ---------- */
   const grid = document.getElementById("grid");
   const gallery = [
-  { src: "assets/memory_01.jpg", caption: "First Kiss 💋", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_02.jpg", caption: "Late-night memes 😂", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_03.jpg", caption: "Confession ❤️", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_04.jpg", caption: "Study-date 📚", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_05.jpg", caption: "Movie marathon 🎬", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_06.jpg", caption: "Ice cream date 🍦", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_07.jpg", caption: "Trip together ✈️", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_08.jpg", caption: "First screenshot 📸", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_09.jpg", caption: "Laughter fit 😂", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_10.jpg", caption: "Inside jokes 😝", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_11.jpg", caption: "100 Days ✨", r: (Math.random()*8 - 4).toFixed(2) },
-  { src: "assets/memory_12.jpg", caption: "Forever 💛", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_01.jpg", caption: "Reaction to confession💋", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_02.jpg", caption: "Pookie makin moves 🙈", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_03.jpg", caption: "Bro has no shy 🎀🙈", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_04.jpg", caption: "I mean... you asked for it 🤭", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_05.jpg", caption: "Shared 'I Love You' for first time 💝", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_06.jpg", caption: "Vc Full Of Heaven Vocals 👂🍯", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_07.jpg", caption: "OMgGg BrOoOo 💅💅", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_08.jpg", caption: "Me makin moves at last 😤", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_09.jpg", caption: "Kaviii, saapdu 🥺", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_10.jpg", caption: "Mini recap 🍯💝", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_11.jpg", caption: "Bro found my blueprint of proposal 🥀", r: (Math.random()*8 - 4).toFixed(2) },
+  { src: "assets/memory_12.jpg", caption: "This is NOT coincidence 😤💅", r: (Math.random()*8 - 4).toFixed(2) },
 ];
   grid.innerHTML = gallery.map(g => `
     <figure class="polaroid" style="--r:${g.r}">
