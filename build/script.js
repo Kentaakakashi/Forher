@@ -21,13 +21,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ---------- Music toggle ---------- */
+/* ---------- Music toggle ---------- */
   const music = document.getElementById("bgMusic");
   const musicBtn = document.getElementById("musicBtn");
-  music.volume = 0.45; // moderate
-  // browsers block autoplay with sound, so default paused; user toggles
+  music.volume = 0.45;
+
+  // start music when scrapbook opens
+  enterBtn.addEventListener("click", () => {
+    intro.style.opacity = "0";
+    setTimeout(() => intro.style.display = "none", 700);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // play music by default after intro
+    music.play().then(() => {
+      musicBtn.textContent = "⏸️";
+    }).catch(err => {
+      console.log("Autoplay blocked, will need manual click", err);
+      musicBtn.textContent = "❤️🎶";
+    });
+  });
+
+  // toggle manually
   musicBtn.addEventListener("click", () => {
-    if (music.paused) { music.play(); musicBtn.textContent = "⏸️"; }
-    else { music.pause(); musicBtn.textContent = "❤️🎶"; }
+    if (music.paused) { 
+      music.play(); 
+      musicBtn.textContent = "⏸️"; 
+    } else { 
+      music.pause(); 
+      musicBtn.textContent = "❤️🎶"; 
+    }
   });
 
   /* ---------- Lemon Easter egg (10 taps to unlock) ---------- */
