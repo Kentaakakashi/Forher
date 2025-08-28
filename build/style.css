@@ -14,6 +14,144 @@ body{
   color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased;
 }
 
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf5;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  padding: 50px 20px 30px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+}
+
+header h1 span {
+  color: #ff4b5c;
+  position: relative;
+}
+
+header h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: #ff4b5c;
+  animation: underline 2s infinite alternate;
+}
+
+@keyframes underline {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Floating emojis */
+.floating-emoji {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-30px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+/* Lemon draggable icon */
+#lemon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: grab;
+  z-index: 999;
+}
+
+/* Section title */
+h2 {
+  margin: 40px 0 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4b5c;
+}
+
+/* Timeline */
+.timeline {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline-item {
+  background: #fff;
+  border-left: 5px solid #ff4b5c;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.memory {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.memory:hover {
+  transform: scale(1.05);
+}
+
+.memory img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Music player */
+audio {
+  margin: 20px auto;
+  display: block;
+}
+
 /* INTRO */
 .intro{
   position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
