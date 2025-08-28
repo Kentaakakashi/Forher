@@ -1,78 +1,136 @@
-// Intro typewriter
-let text="100 Days of Kenta ❤️ Lemon",i=0;
-function type(){
-  if(i<text.length){
-    document.getElementById("introText").textContent+=text[i++];
-    setTimeout(type,100);
+document.addEventListener("DOMContentLoaded", () => {
+  /* ---------- Intro typewriter + enter ---------- */
+  const introTextEl = document.getElementById("introText");
+  const intro = document.getElementById("intro");
+  const enterBtn = document.getElementById("enterBtn");
+
+  const introText = "100 Days of Kenta ❤️ Lemon";
+  let tIndex = 0;
+  function type() {
+    if (tIndex < introText.length) {
+      introTextEl.textContent += introText[tIndex++];
+      setTimeout(type, 75);
+    }
   }
-}
-type();
-document.getElementById("enterBtn").onclick=()=>{
-  document.getElementById("intro").style.opacity=0;
-  setTimeout(()=>document.getElementById("intro").style.display="none",1000);
-};
+  type();
 
-// Secret lemon easter egg
-let taps=0;
-document.querySelector('.lemon-egg').onclick=()=>{
-  taps++;
-  if(taps>=10){
-    document.getElementById('secretTab').style.display='inline';
-    alert("🍋 Secret page unlocked!");
-    taps=0;
-  }
-};
+  enterBtn.addEventListener("click", () => {
+    intro.style.opacity = "0";
+    setTimeout(() => intro.style.display = "none", 700);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-// Music toggle
-const music=document.getElementById("bgMusic");
-document.getElementById("musicBtn").onclick=()=>{
-  if(music.paused){ music.play(); }
-  else{ music.pause(); }
-};
+  /* ---------- Music toggle ---------- */
+  const music = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicBtn");
+  music.volume = 0.45; // moderate
+  // browsers block autoplay with sound, so default paused; user toggles
+  musicBtn.addEventListener("click", () => {
+    if (music.paused) { music.play(); musicBtn.textContent = "⏸️"; }
+    else { music.pause(); musicBtn.textContent = "❤️🎶"; }
+  });
 
-// Timeline
-const TIMELINE=[
-  {date:"Day 1",title:"Met ❤️",desc:"First chat"},
-  {date:"Day 21",title:"Confession",desc:"Big moment"}
-];
-document.getElementById('timeline').innerHTML=
-  TIMELINE.map(t=>`<div><h3>${t.title}</h3><p>${t.desc}</p></div>`).join('');
+  /* ---------- Lemon Easter egg (10 taps to unlock) ---------- */
+  const lemonEgg = document.getElementById("lemonEgg");
+  const secretTab = document.getElementById("secretTab");
+  let taps = 0;
+  lemonEgg.addEventListener("click", () => {
+    taps++;
+    if (taps >= 10) {
+      secretTab.style.display = "inline";
+      alert("🍋 Secret page unlocked!");
+      taps = 0;
+    }
+  });
 
-// Gallery (memory_01.jpg → memory_12.jpg)
-const GALLERY = [...Array(12)].map((_, i) => ({
-  src: `assets/memory_${String(i+1).padStart(2,'0')}.jpg`,
-  caption: `Memory #${i+1}`
-}));
+  /* ---------- TIMELINE data + render ---------- */
+  const TIMELINE = [
+    { date: "Day 1", title: "We started talking 💬", desc: "The first message that changed everything." },
+    { date: "Day 7", title: "Late-night memes 😂", desc: "You sent the cursed meme, we cried laughing." },
+    { date: "Day 21", title: "Confession ❤️", desc: "Our little heart-explosion moment." },
+    { date: "Day 50", title: "Inside jokes 😝", desc: "Now everything is a meme." },
+    { date: "Day 75", title: "Study-date 📚", desc: "We pretended to study but texted more." },
+    { date: "Day 100", title: "100 Days ✨", desc: "A hundred tiny memories that mean the world." }
+  ];
+  const timelineEl = document.getElementById("timeline");
+  timelineEl.innerHTML = TIMELINE.map(item => `
+    <article class="tl-item">
+      <div class="tl-date">${item.date}</div>
+      <div class="tl-body">
+        <h4>${item.title}</h4>
+        <p>${item.desc}</p>
+      </div>
+    </article>
+  `).join("");
 
-document.getElementById('grid').innerHTML =
-  GALLERY.map(g =>
-    `<div>
-       <img src="${g.src}" alt="${g.caption}" />
-       <p>${g.caption}</p>
-     </div>`
-  ).join('');
+  /* ---------- GALLERY: uses memory_01..memory_12.jpg ---------- */
+  const grid = document.getElementById("grid");
+  const gallery = Array.from({length:12}, (_,i) => ({
+    src:`assets/memory_${String(i+1).padStart(2,"0")}.jpg`,
+    caption:`Memory #${i+1}`,
+    r: (Math.random()*8 - 4).toFixed(2)
+  }));
+  grid.innerHTML = gallery.map(g => `
+    <figure class="polaroid" style="--r:${g.r}">
+      <img src="${g.src}" alt="${g.caption}" loading="lazy" />
+      <figcaption>${g.caption}</figcaption>
+    </figure>
+  `).join("");
 
-// Chats
-const CHATS=[
-  {from:"Lemon",text:"Kentaaa 😝"},
-  {from:"Kenta",text:"Yes my lemon 🍋"},
-  {from:"Lemon",text:"Nothing 🙈🥰"}
-];
-document.getElementById('chat').innerHTML=
-  CHATS.map(c=>`<div><b>${c.from}:</b> ${c.text}</div>`).join('');
+  /* ---------- CHATS ---------- */
+  const chatEl = document.getElementById("chat");
+  const CHATS = [
+    { from: "Lemon", text: "Kentaaa 😝" },
+    { from: "Kenta", text: "Yes my lemon? 🍋" },
+    { from: "Lemon", text: "Nothing 🙈🥰" },
+    { from: "Kenta", text: "Everything then 💛" }
+  ];
+  chatEl.innerHTML = CHATS.map((c, idx) => `
+    <div class="bubble ${c.from === "Kenta" ? "kenta" : "lemon"}" style="transition-delay:${idx*120}ms">
+      <b>${c.from}:</b> ${c.text}
+    </div>
+  `).join("");
 
-// Notes
-document.querySelector('.notes').innerHTML=`<img src='assets/note.png'/>`;
+  /* ---------- NOTES ---------- */
+  const notesWrap = document.getElementById("notesWrap");
+  notesWrap.innerHTML = `
+    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“You say 'Nothing' and it's the whole world.” — K</p></div>
+    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“Day 50: inside jokes unlocked.”</p></div>
+    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“100 days down, forever to go 💛.”</p></div>
+  `;
 
-// Bucket list
-const BUCKET=["Ice cream date 🍦","Study sesh 📚","Trip ✈️"];
-document.getElementById('bucketList').innerHTML=
-  BUCKET.map(i=>`<li>${i}</li>`).join('');
+  /* ---------- BUCKET / FAV / FUTURE ---------- */
+  const bucket = ["Ice cream date 🍦","Movie marathon 🎬","Trip together ✈️","Cook together 🍳"];
+  document.getElementById("bucketList").innerHTML = bucket.map(it => `<li class="bucket-item">${it}</li>`).join("");
 
-// Fav
-document.getElementById('favGrid').innerHTML=
-  `<div>Fav memory #1</div><div>Fav memory #2</div>`;
+  document.getElementById("favGrid").innerHTML =
+    `<div class="card">Fav Moment: First screenshot</div><div class="card">Fav Moment: Laughter fit</div>`;
 
-// Future
-document.getElementById('futurePlans').innerHTML=
-  `<p>Day 200: Surprise!<br>Day 365: Anniversary 💕</p>`;
+  document.getElementById("futurePlans").innerHTML =
+    `<p>Day 200 — Surprise date.<br>Day 365 — Anniversary plan.</p>`;
+
+  /* ---------- INTERSECTION OBSERVER for reveal animations ---------- */
+  const ioOptions = { root: null, rootMargin: "0px", threshold: 0.12 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, ioOptions);
+
+  // observe timeline items, polaroids, bubbles
+  document.querySelectorAll(".tl-item, .polaroid, .bubble, .note-card").forEach(el => observer.observe(el));
+
+  /* ---------- POLAROID rotation fix (randomized via CSS var) ---------- */
+  document.querySelectorAll(".polaroid").forEach((p, i) => {
+    // small stagger on load for nicer effect
+    setTimeout(()=> p.classList.add("show"), 120 + i * 80);
+  });
+
+  // chat bubbles appear staggered
+  document.querySelectorAll(".bubble").forEach((b, i) => {
+    setTimeout(()=> b.classList.add("show"), 250 + i * 140);
+  });
+});
