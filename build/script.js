@@ -168,19 +168,20 @@ const letterText = `
 Hey Lemon, 🍋
 
 I don’t even know where to start because if I start writing about you, I’ll probably never stop. 
-From the way you spam “Nothing 🙈🥰” whenever I call your name, to the way you roast me every chance you get (and I secretly love it)… 
-you’ve become my favorite person in this whole damn world.
-
-I love how even the tiniest things with you feel huge — like laughing at some random inside joke, 
-or just sitting in silence and still feeling like it’s the best part of my day. 
-You’re the chaos, the comfort, the cutie, the “lemon” that turned my boring water life into lemonade. 🥤✨
-
+You still feel like too much for me to take on kavi lol, like this is more of an fantacy for me, i just love how we're being an matured couples at an age of this, based on our consistancy in studys and how we know when to prioritise what and what not to do, even though we do get clumsy and make out whenever we get a gap, come onnnn its not all we got lol, youre just my fantasy and way above it, never in a million years would i be not shocked to hear that you're mine. LIKE BROOOO. KAVIMITHA IS MINEEEE 🤯🤯🤯, lol. We're going through stuffs, we don't how tough it can get in the future, but ik one thing, nothing gonna seperate shit from us, even if we only got an hour or less to spend
+with each other, we would still make it an golden hour for sure, dosent matter if it even emds up silent, you're here, and am here, am glad to say there aint nothing to change that.
+I love you a lot kavi, when i say lot idk how much it conveys to you 🥰, but i mean a lot, alot alottt alottttt A FUCKIN LOTTTTTTTTTTT. 
+you're soo much god damn special to me, in a lot of ways, idk if anyone in my entire life understood me much as you do,
+am not saying this just for words but like never in my life anyone had reached this far in understanding what kind kf person i actually am,
+no one ever tore through the cool-guy status i made up formyself to stand out in places, you only did,only you did, to anyone else am just a nonchalant asshole or just like an 'i mind my own business' type of guy,
+or a different kind of varient that i completely am not, but you know who i am, you know what i do and can do and can't do, 
+a human dictionary to explain me, beside all our 18+ jokes and stuff, we both know how deep our bond is digging in each day, 
 I promise I’ll never leave, never let you feel alone, and never let a single day pass without reminding you 
 that you are my everything. 
 This letter isn’t enough to hold all my feelings, but hey… it’s a start. 
 
 Always yours,  
-— Kenta ❤️
+— Naren❤️
 `;
 
 const letterElement = document.getElementById("typed-letter");
