@@ -67,13 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- TIMELINE data + render ---------- */
   const TIMELINE = [
-    { date: "Day 1", title: "We started talking 💬", desc: "The first message that changed everything." },
-    { date: "Day 7", title: "Late-night memes 😂", desc: "You sent the cursed meme, we cried laughing." },
-    { date: "Day 21", title: "Confession ❤️", desc: "Our little heart-explosion moment." },
-    { date: "Day 50", title: "Inside jokes 😝", desc: "Now everything is a meme." },
-    { date: "Day 75", title: "Study-date 📚", desc: "We pretended to study but texted more." },
-    { date: "Day 100", title: "100 Days ✨", desc: "A hundred tiny memories that mean the world." }
-  ];
+  { date: "Day 1", title: "The toddler's step's 🥥🎀", desc: "Slept with body full of butterflies ( both barely slept lol )"},
+  { date: "Day 9", title: "First Vc 🎀", desc: "2 shy nibbas being awkward af hehehe"},
+  { date: "Day 38", title: "cutie pookie 🙈🤭", desc: "Beginning of 'Kentaaaaa... nothing 🙈🎀'"},
+  { date: "Day 53", title: "Get Used to it", desc: "Started to realise that 'LEMON/KENTA is mine?! 🙈🙈' "},
+  { date: "Day 67", title: "ROBLOXXX DAY", desc: "Pookies playing romnatic ahh roblox shi 🙈🎀🤭"},
+  { date: "Day 100", title: "The unexpected century of the decade✨", desc: "Gotta multiply it by infinity"}
+];
   const timelineEl = document.getElementById("timeline");
   timelineEl.innerHTML = TIMELINE.map(item => `
     <article class="tl-item">
