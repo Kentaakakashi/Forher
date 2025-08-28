@@ -112,9 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatEl = document.getElementById("chat");
   const CHATS = [
     { from: "Lemon", text: "Kentaaa 😝" },
-    { from: "Kenta", text: "Yes my lemon? 🍋" },
+    { from: "Kenta", text: "LEMONNNNNNN 😝🥰" },
     { from: "Lemon", text: "Nothing 🙈🥰" },
-    { from: "Kenta", text: "Everything then 💛" }
+    { from: "Kenta", text: "HUHHHHHHHHH 😤😤😤😤👺👺👺👺" },
+    { from: "Lemon", text: "muhehehehe 🙈💅" },
+    { from: "Kenta", text: "Love yaaaaa 🤭🎀🥰" },
+    { from: "Lemon", text: "LOVE YA MOREEEE 😝😝🥰🤭" }
   ];
   chatEl.innerHTML = CHATS.map((c, idx) => `
     <div class="bubble ${c.from === "Kenta" ? "kenta" : "lemon"}" style="transition-delay:${idx*120}ms">
