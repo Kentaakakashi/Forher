@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenta ❤️ Lemon — 100 Days</title>
+  <link rel="icon" href="assets/lemon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Intro Screen -->
+  <div id="intro" class="intro">
+    <div class="intro-content">
+      <img src="assets/lemon.png" class="intro-icon"/>
+      <h1 id="introText"></h1>
+      <button id="enterBtn">📖 Open the Scrapbook</button>
+    </div>
+  </div>
+
+  <div class="lemon-egg"></div>
+
+  <header class="hero">
+    <h1>Kenta <span>❤️</span> Lemon</h1>
+    <p>100 Days of Us</p>
+    <button id="musicBtn" class="music-btn">❤️🎶</button>
+    <audio id="bgMusic" loop src="assets/song.mp3"></audio>
+  </header>
+
+  <nav class="tabs">
+    <a href="#memories">Memories</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#chats">Chats</a>
+    <a href="#notes">Notes</a>
+    <a href="#music">Music</a>
+    <a href="#bucket">Bucket List</a>
+    <a href="#fav">Fav Moments</a>
+    <a href="#future">Future Plans</a>
+    <a href="#secret" id="secretTab" style="display:none;">Secret</a>
+  </nav>
+
+  <main>
+    <section id="memories" class="section"><h2>Our Journey</h2><div id="timeline"></div></section>
+    <section id="gallery" class="section"><h2>Polaroid Gallery</h2><div id="grid"></div></section>
+    <section id="chats" class="section"><h2>Funny Chats</h2><div id="chat"></div></section>
+    <section id="notes" class="section"><h2>Love Notes</h2><div class="notes"></div></section>
+    <section id="music" class="section"><h2>Music Vibes</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0"></iframe>
+    </section>
+    <section id="bucket" class="section"><h2>Bucket List</h2><ul id="bucketList"></ul></section>
+    <section id="fav" class="section"><h2>Fav Moments</h2><div id="favGrid"></div></section>
+    <section id="future" class="section"><h2>Future Plans</h2><div id="futurePlans"></div></section>
+    <section id="secret" class="section"><h2>🍋 Secret Lemon Page</h2><p>You unlocked this because you’re my forever 💛</p></section>
+  </main>
+
+  <footer class="footer">2025 © Kenta ❤️ Lemon</footer>
+  <script src="script.js"></script>
+</body>
+</html>
