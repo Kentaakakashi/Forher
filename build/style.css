@@ -215,10 +215,21 @@ audio {
 .bubble.show{opacity:1; transform:none}
 
 /* NOTES */
-.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:start}
-.note-card{position:relative}
-.note-card img{width:100%;border-radius:12px;box-shadow:0 16px 36px rgba(0,0,0,.12)}
-.note-card p{position:absolute;left:12px;top:20px;right:12px;color:#6a4a37;font-weight:700}
+.note-card {
+  position: relative;
+  background: url('assets/note.png') center/cover no-repeat;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 160px; /* adjust based on note.png height */
+  box-shadow: 0 16px 36px rgba(0,0,0,.12);
+}
+
+.note-card p {
+  position: relative; /* sits inside naturally */
+  color: #6a4a37;
+  font-weight: 700;
+  line-height: 1.4;
+}
 
 /* BUCKET / FAV / FUTURE */
 .bucket-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem}
