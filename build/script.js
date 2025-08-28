@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- NOTES ---------- */
   const notesWrap = document.getElementById("notesWrap");
   notesWrap.innerHTML = `
-    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“You say 'Nothing' and it's the whole world.” — K</p></div>
-    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“Day 50: inside jokes unlocked.”</p></div>
+    <div class="note-card"><img src="assets/note.png" alt="note"/><p>"She's all i got” — K</p></div>
+    <div class="note-card"><img src="assets/note.png" alt="note"/><p>“Still cant digest all this lol”</p></div>
     <div class="note-card"><img src="assets/note.png" alt="note"/><p>“100 days down, forever to go 💛.”</p></div>
   `;
 
