@@ -238,6 +238,30 @@ audio {
 /* FAVORITES */
 .fav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 
+/* LETTER */
+.letter-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: left;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  position: relative;
+}
+
+.letter-container::before {
+  content: "✍️";
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  font-size: 1.6rem;
+}
+
 /* SECRET card */
 .secret-card{background:linear-gradient(180deg,#fff,#fffaf0);padding:1.4rem;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.08)}
 
