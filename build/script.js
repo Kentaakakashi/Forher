@@ -162,3 +162,48 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(()=> b.classList.add("show"), 250 + i * 140);
   });
 });
+
+// Love Letter Typing Effect
+const letterText = `
+Hey Lemon, 🍋
+
+I don’t even know where to start because if I start writing about you, I’ll probably never stop. 
+From the way you spam “Nothing 🙈🥰” whenever I call your name, to the way you roast me every chance you get (and I secretly love it)… 
+you’ve become my favorite person in this whole damn world.
+
+I love how even the tiniest things with you feel huge — like laughing at some random inside joke, 
+or just sitting in silence and still feeling like it’s the best part of my day. 
+You’re the chaos, the comfort, the cutie, the “lemon” that turned my boring water life into lemonade. 🥤✨
+
+I promise I’ll never leave, never let you feel alone, and never let a single day pass without reminding you 
+that you are my everything. 
+This letter isn’t enough to hold all my feelings, but hey… it’s a start. 
+
+Always yours,  
+— Kenta ❤️
+`;
+
+const letterElement = document.getElementById("typed-letter");
+const typingSound = document.getElementById("typing-sound");
+let i = 0;
+let typing = false;
+
+function typeLetter() {
+  if (i < letterText.length) {
+    letterElement.textContent += letterText.charAt(i);
+    i++;
+    setTimeout(typeLetter, 40);
+  } else {
+    typingSound.pause();
+    typingSound.currentTime = 0;
+  }
+}
+
+window.addEventListener("scroll", () => {
+  const rect = letterElement.getBoundingClientRect();
+  if (!typing && rect.top < window.innerHeight - 100) {
+    typing = true;
+    typingSound.play();
+    typeLetter();
+  }
+});
