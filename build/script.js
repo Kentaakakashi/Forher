@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   /* ---------- BUCKET / FAV / FUTURE ---------- */
-  const bucket = ["Ice cream date 🍦","Movie marathon 🎬","Trip together ✈️","Cook together (burn the house) 🍳", "Throw you into backetball hook ⛹️‍♂️", "Etc... (no spoiler) 💌"];
+  const bucket = ["Ice cream date 🍦","Movie marathon 🎬","Trip together ✈️","Cook together (burn the house) 🍳", "Throw you into backetball hook ⛹️‍♂️", "Give you shit load of hickeys 💋", "Etc... (no spoiler) 💌"];
   document.getElementById("bucketList").innerHTML = bucket.map(it => `<li class="bucket-item">${it}</li>`).join("");
 
   document.getElementById("favGrid").innerHTML =
