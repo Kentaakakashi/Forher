@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Kenta ❤️ Lemon — 100 day scrapbook" />
   <title>Kenta ❤️ Lemon — 100 Days</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="icon" href="assets/lemon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Intro Screen -->
+  <!-- Intro overlay -->
   <div id="intro" class="intro">
-    <div class="intro-content">
-      <img src="assets/lemon.png" class="intro-icon"/>
-      <h1 id="introText"></h1>
-      <button id="enterBtn">📖 Open the Scrapbook</button>
+    <div class="intro-card" role="dialog" aria-label="Opening">
+      <img src="assets/lemon.png" alt="lemon" class="intro-lemon" />
+      <h1 id="introText" class="intro-title" aria-hidden="true"></h1>
+      <button id="enterBtn" class="enter-btn" aria-label="Open Scrapbook">📖 Open the Scrapbook</button>
     </div>
   </div>
 
-  <div class="lemon-egg"></div>
+  <!-- floating lemon -->
+  <button id="lemonEgg" class="lemon-egg" title="🍋 pssst"></button>
 
+  <!-- header -->
   <header class="hero">
-    <h1>Kenta <span>❤️</span> Lemon</h1>
-    <p>100 Days of Us</p>
-    <button id="musicBtn" class="music-btn">❤️🎶</button>
-    <audio id="bgMusic" loop src="assets/song.mp3"></audio>
+    <div class="hero-inner">
+      <h1 class="brand"><span class="hand">Kenta</span> <span class="heart">❤️</span> <span class="hand">Lemon</span></h1>
+      <p class="tag">100 Days of Us — tiny memories, giant feels ✨</p>
+    </div>
+
+    <button id="musicBtn" class="music-btn" aria-label="Toggle background music">❤️🎶</button>
+    <audio id="bgMusic" src="assets/song.mp3" loop preload="auto"></audio>
   </header>
 
-  <nav class="tabs">
+  <!-- nav -->
+  <nav class="tabs" aria-label="Sections">
     <a href="#memories">Memories</a>
     <a href="#gallery">Gallery</a>
     <a href="#chats">Chats</a>
     <a href="#notes">Notes</a>
     <a href="#music">Music</a>
-    <a href="#bucket">Bucket List</a>
-    <a href="#fav">Fav Moments</a>
-    <a href="#future">Future Plans</a>
-    <a href="#secret" id="secretTab" style="display:none;">Secret</a>
+    <a href="#bucket">Bucket</a>
+    <a href="#fav">Favs</a>
+    <a href="#future">Future</a>
+    <a href="#secret" id="secretTab" style="display:none">Secret</a>
   </nav>
 
   <main>
-    <section id="memories" class="section"><h2>Our Journey</h2><div id="timeline"></div></section>
-    <section id="gallery" class="section"><h2>Polaroid Gallery</h2><div id="grid"></div></section>
-    <section id="chats" class="section"><h2>Funny Chats</h2><div id="chat"></div></section>
-    <section id="notes" class="section"><h2>Love Notes</h2><div class="notes"></div></section>
-    <section id="music" class="section"><h2>Music Vibes</h2>
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0"></iframe>
+    <!-- timeline -->
+    <section id="memories" class="section container">
+      <h2 class="section-title">Our Journey</h2>
+      <div id="timeline" class="timeline"></div>
     </section>
-    <section id="bucket" class="section"><h2>Bucket List</h2><ul id="bucketList"></ul></section>
-    <section id="fav" class="section"><h2>Fav Moments</h2><div id="favGrid"></div></section>
-    <section id="future" class="section"><h2>Future Plans</h2><div id="futurePlans"></div></section>
-    <section id="secret" class="section"><h2>🍋 Secret Lemon Page</h2><p>You unlocked this because you’re my forever 💛</p></section>
+
+    <!-- gallery -->
+    <section id="gallery" class="section alt container">
+      <h2 class="section-title">Polaroid Gallery</h2>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- chats -->
+    <section id="chats" class="section container">
+      <h2 class="section-title">Funny Chats</h2>
+      <div id="chat" class="chat"></div>
+    </section>
+
+    <!-- notes -->
+    <section id="notes" class="section alt container">
+      <h2 class="section-title">Love Notes</h2>
+      <div class="notes" id="notesWrap"></div>
+    </section>
+
+    <!-- music embed -->
+    <section id="music" class="section container">
+      <h2 class="section-title">Music Vibes</h2>
+      <div class="music-embed">
+        <!-- placeholder YouTube embed — replace if you want Spotify -->
+        <iframe width="100%" height="360" src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="YouTube player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- bucket -->
+    <section id="bucket" class="section alt container">
+      <h2 class="section-title">Bucket List</h2>
+      <ul id="bucketList" class="bucket-list"></ul>
+    </section>
+
+    <!-- favorite moments -->
+    <section id="fav" class="section container">
+      <h2 class="section-title">Fav Moments</h2>
+      <div id="favGrid" class="fav-grid"></div>
+    </section>
+
+    <!-- future -->
+    <section id="future" class="section alt container">
+      <h2 class="section-title">Future Plans</h2>
+      <div id="futurePlans" class="future-plans"></div>
+    </section>
+
+    <!-- secret -->
+    <section id="secret" class="section container">
+      <h2 class="section-title">🍋 Secret Lemon Page</h2>
+      <div class="secret-card">
+        <h3>Hey Lemon — you found it 💛</h3>
+        <p>This is our little secret page. Replace this with anything you want — a video, a letter, or a tiny proposal (jk but also, maybe not).</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">2025 © Kenta ❤️ Lemon</footer>
+  <footer class="footer">
+    <small>2025 © Kenta ❤️ Lemon — made with a tiny lemon & big feelings.</small>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
