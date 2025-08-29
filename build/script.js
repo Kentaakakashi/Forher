@@ -52,18 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* ---------- Lemon Easter egg (10 taps to unlock) ---------- */
-  const lemonEgg = document.getElementById("lemonEgg");
-  const secretTab = document.getElementById("secretTab");
-  let taps = 0;
-  lemonEgg.addEventListener("click", () => {
-    taps++;
-    if (taps >= 10) {
-      secretTab.style.display = "inline";
-      alert("🍋 Secret page unlocked!");
-      taps = 0;
-    }
-  });
+/* ---------- Lemon Easter egg (10 taps to unlock) ---------- */
+const lemonEgg = document.getElementById("lemonEgg");
+const secretTab = document.getElementById("secretTab");
+let taps = 0;
+const tapsRequired = 10;
+
+lemonEgg.addEventListener("click", () => {
+  taps++;
+  const remaining = tapsRequired - taps;
+
+  if (taps >= tapsRequired) {
+    secretTab.style.display = "inline";
+    alert("🍋 Secret page unlocked!");
+    taps = 0; // reset
+  } else {
+    alert(`🍋 ${remaining} taps left to unlock the secret page!`);
+  }
+});
 
   /* ---------- TIMELINE data + render ---------- */
   const TIMELINE = [
