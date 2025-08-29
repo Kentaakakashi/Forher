@@ -231,6 +231,28 @@ audio {
   line-height: 1.4;
 }
 
+/* Lemon jar*/
+.jar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#lemonJar {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#lemonJar:hover { transform: scale(1.05); }
+.lemon-output {
+  margin-top: 1rem;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  color: #444;
+  min-height: 40px;
+}
+
 /* BUCKET / FAV / FUTURE */
 .bucket-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem}
 .bucket-list li{padding:.6rem 1rem;background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
