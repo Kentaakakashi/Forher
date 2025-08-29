@@ -133,6 +133,43 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="note-card"><img src="assets/note.png" alt="note"/><p>“100 days down, forever to go 💛.”</p></div>
   `;
 
+  /* ---------- Lemon jar --------*/
+  const lemonJar = document.getElementById("lemonJar");
+const lemonOutput = document.getElementById("lemonOutput");
+const jarStatus = document.getElementById("jarStatus");
+
+const reasons = [
+  "You always say 'Kentaaa... nothing 🙈' and it melts me.",
+  "You never fail to make me laugh, even on bad days.",
+  "You make studying together actually fun.",
+  "Your smile feels like home.",
+  // ... add up to 100 reasons
+];
+
+let remaining = [...reasons];
+let canClick = true;
+
+function refillJar() {
+  remaining = [...reasons].sort(() => Math.random() - 0.5);
+  jarStatus.textContent = `${remaining.length} lemons inside 🍋`;
+}
+refillJar();
+
+lemonJar.addEventListener("click", () => {
+  if (!canClick) return;
+  if (remaining.length === 0) {
+    lemonOutput.textContent = "✨ The jar magically refilled!";
+    refillJar();
+    return;
+  }
+  const reason = remaining.pop();
+  lemonOutput.textContent = `🍋 ${reason}`;
+  jarStatus.textContent = `${remaining.length} lemons left 🍋`;
+
+  canClick = false;
+  setTimeout(() => { canClick = true }, 5000); // 5 sec cooldown
+});
+
   /* ---------- BUCKET / FAV / FUTURE ---------- */
   const bucket = ["Ice cream date 🍦","Movie marathon 🎬","Trip together ✈️","Cook together (burn the house) 🍳", "Throw you into backetball hook ⛹️‍♂️", "Give you shit load of hickeys 💋", "Etc... (no spoiler) 💌"];
   document.getElementById("bucketList").innerHTML = bucket.map(it => `<li class="bucket-item">${it}</li>`).join("");
