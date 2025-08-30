@@ -257,18 +257,35 @@ function refillJar() {
 refillJar();
 
 lemonJar.addEventListener("click", () => {
+  const cooldownEl = document.getElementById("cooldown");
+
   if (!canClick) return;
+
   if (remaining.length === 0) {
     lemonOutput.textContent = "✨ The jar magically refilled!";
     refillJar();
     return;
   }
+
   const reason = remaining.pop();
   lemonOutput.textContent = `🍋 ${reason}`;
   jarStatus.textContent = `${remaining.length} lemons left 🍋`;
 
+  // start cooldown
   canClick = false;
-  setTimeout(() => { canClick = true }, 5000); // 5 sec cooldown
+  let timer = 5;
+  cooldownEl.textContent = `⏳ Wait ${timer}s...`;
+
+  const interval = setInterval(() => {
+    timer--;
+    if (timer > 0) {
+      cooldownEl.textContent = `⏳ Wait ${timer}s...`;
+    } else {
+      cooldownEl.textContent = "";
+      canClick = true;
+      clearInterval(interval);
+    }
+  }, 1000);
 });
 
   /* ---------- BUCKET / FAV / FUTURE ---------- */
