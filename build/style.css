@@ -252,6 +252,26 @@ audio {
   color: #444;
   min-height: 40px;
 }
+.click-sign {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: bounce 1s infinite;
+  margin-bottom: 8px;
+}
+
+.cooldown {
+  text-align: center;
+  font-size: 1rem;
+  color: #ff5555;
+  margin-top: 8px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
 
 /* BUCKET / FAV / FUTURE */
 .bucket-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem}
